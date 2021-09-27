@@ -1,18 +1,16 @@
 import math
 
-T = int(input())
-
-for t in range(T):
-    res = 0
-    n = int(input())
-    n = n * 2
-    for i in range(2, int(math.sqrt(n))+1):
-        if n % i != 0:
-            continue
-        j = n // i
-        if (i+j-1) % 2 == 0:
-            cuoi = (i+j-1)//2
-            dau = j - cuoi
-            if (dau != cuoi):
-                res += 1
-    print(res)
+def main():
+    num = input()
+    if len(num) == 1:
+        print(1)
+    else:
+        dem = 0
+        while(len(num)!=1):
+            sum = 0
+            for i in num:
+                sum += ord(i) - ord('0')
+            num = str(sum)
+            dem += 1
+        print(dem)
+main()
